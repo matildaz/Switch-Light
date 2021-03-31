@@ -9,11 +9,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var isLightOn : Bool = false
+    //var colourOfTheButton : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        LightON()
     }
 
-
+    fileprivate func LightON() {
+        if isLightOn {
+            view.backgroundColor = .white
+            //editButtonItem.tintColor = .black
+        } else {
+            view.backgroundColor = .black
+            //editButtonItem.tintColor = .white
+        }
+    }
+    
+    @IBAction func ButtonGetPressed() {
+        isLightOn.toggle()
+        //colourOfTheButton.toggle()
+        LightON()
+        
+    }
+    
 }
 
