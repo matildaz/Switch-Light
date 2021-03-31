@@ -9,8 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var isLightOn : Bool = true
-    //var colourOfTheButton : Bool = false
+    var isLightOn : Int = 0
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -22,21 +21,23 @@ class ViewController: UIViewController {
     }
 
     fileprivate func LightON() {
-        if isLightOn {
-            view.backgroundColor = .white
-            //editButtonItem.tintColor = .black
-        } else {
+        switch true {
+        case isLightOn == 1:
+            view.backgroundColor = .yellow
+            isLightOn += 1
+            isLightOn %= 3
+        case isLightOn == 2:
             view.backgroundColor = .black
-            //editButtonItem.tintColor = .white
+            isLightOn += 1
+            isLightOn %= 3
+        default:
+            view.backgroundColor = .white
+            isLightOn += 1
+            isLightOn %= 3
         }
     }
     
     @IBAction func ButtonGetPressed() {
-        isLightOn.toggle()
-        //colourOfTheButton.toggle()
         LightON()
-        
     }
-    
 }
-
