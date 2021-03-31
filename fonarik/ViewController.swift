@@ -9,8 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var isLightOn : Bool = false
+    var isLightOn : Bool = true
     //var colourOfTheButton : Bool = false
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
